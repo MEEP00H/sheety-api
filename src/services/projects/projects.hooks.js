@@ -6,10 +6,10 @@ const getProjectOwner = require('../../hooks/get-project-owner');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [ ],
     find: [],
     get: [],
-    create: [ getProjectOwner(),getSpreadsheetId()],
+    create: [ authenticate("jwt"),getProjectOwner(),getSpreadsheetId()],
     update: [],
     patch: [],
     remove: []

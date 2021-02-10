@@ -37,9 +37,8 @@ Content-Type: application/json
 
 {
     "name": "Blood",
-    //"spreadsheetId":  "1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M",
+    "spreadsheetId":  "1buCfwvedtERnGIWwLWByD8gNJHaRfldmNpGMf",
     //"owner":"60220499519fa205b8409518",
-    "strategy":"local",
-    "url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M"
-    
+    "strategy":"local"
+    //"url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M"
 }
