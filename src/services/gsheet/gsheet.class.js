@@ -1,8 +1,5 @@
-/* eslint-disable no-unused-vars */
-
-const AuthGoogleSheet = require("../../util/auth-google-sheet");
 const GetDataGoogleSheet = require("../../util/data-google-sheet");
-var _ = require("lodash");
+const { NotFound } = require("@feathersjs/errors");
 
 exports.Gsheet = class Gsheet {
   constructor(options) {
@@ -14,7 +11,7 @@ exports.Gsheet = class Gsheet {
   // }
 
   async get(id, params) {
-    return GetDataGoogleSheet(id);
+    return await GetDataGoogleSheet(id);
   }
 
   // async create(data, params) {
