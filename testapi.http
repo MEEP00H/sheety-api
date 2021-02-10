@@ -1,0 +1,45 @@
+
+###
+GET http://localhost:3030/users
+
+###
+POST http://localhost:3030/users
+ Content-Type: application/json
+
+ {
+     "email":"nattakarn.plian@gmail.com",
+     "password":"scret",
+     "strategy":"local"
+ }
+###
+POST http://localhost:3030/users
+ Content-Type: application/json
+
+ {
+     "email":"some1@gmail.com",
+     "password":"scret",
+     "strategy":"local"
+ }
+
+###
+POST http://localhost:3030/authentication
+Content-Type: application/json
+
+ {
+     "email":"some1@gmail.com",
+     "password":"scret",
+     "strategy":"local"
+ }
+###
+POST http://localhost:3030/projects 
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MTI4ODE4NTcsImV4cCI6MTYxMjk2ODI1NywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjAyMjBkYWIyZDgwNjkwODYxMjI1Y2NjIiwianRpIjoiOGUzOGMwZTUtMmViMi00MTZjLTliNzktNjczZGE0NmRhYzliIn0.Vgh0btWuT7hmr4AkAD6XpevtqF33on1EHyX3hHJ4GJg
+Content-Type: application/json
+
+{
+    "name": "Blood",
+    //"spreadsheetId":  "1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M",
+    //"owner":"60220499519fa205b8409518",
+    "strategy":"local",
+    "url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M"
+    
+}

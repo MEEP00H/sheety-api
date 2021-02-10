@@ -7,9 +7,9 @@
     "max": 50
   },
   "authentication": {
-    "entity": "user",
+    "entity": "users",
     "service": "users",
-    "secret": "k0xj2EInec8qw5xtcsxviCw4/Cs=",
+    "secret": "TIQC3ofhYoiA52Jj0RGs7frMwXY=",
     "authStrategies": [
       "jwt",
       "local"
@@ -26,6 +26,20 @@
     "local": {
       "usernameField": "email",
       "passwordField": "password"
+    },
+    "oauth": {
+      "redirect": "/",
+      "google": {
+        "key": "96906211598-sgtc6vam4sspfemt2vd9hmuo46sf1hu6.apps.googleusercontent.com",
+        "secret": "6jkhDUoubbAY4M3XOab5QOw8",
+        "scope": [
+          "email",
+          "profile",
+          "openid",
+          "https://www.googleapis.com/auth/spreadsheets"
+        ],
+        "nonce": true
+      }
     }
   },
   "mongodb": "mongodb+srv://sophon:%23j3yQEA6@cluster0.beisz.mongodb.net/test"
