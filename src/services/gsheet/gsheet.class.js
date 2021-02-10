@@ -1,54 +1,39 @@
 /* eslint-disable no-unused-vars */
-const { google } = require("googleapis");
-const keys = require("../../../keys.json");
+
+const AuthGoogleSheet = require("../../util/auth-google-sheet");
+const GetDataGoogleSheet = require("../../util/data-google-sheet");
+var _ = require("lodash");
 
 exports.Gsheet = class Gsheet {
   constructor(options) {
     this.options = options || {};
   }
 
-  async find(params) {
-    return [];
-  }
+  // async find(params) {
+  //   return [];
+  // }
 
   async get(id, params) {
-    const client = new google.auth.JWT(
-      keys.client_email,
-      null,
-      keys.private_key,
-      ["https://www.googleapis.com/auth/spreadsheets"]
-    );
-    const gsapi = google.sheets({ version: "v4", auth: client });
-    let data;
-
-    try {
-      data = await gsapi.spreadsheets.get({
-        spreadsheetId: id,
-      });
-    } catch (error) {
-      data = { status: 500 };
-    }
-
-    return data;
+    return GetDataGoogleSheet(id);
   }
 
-  async create(data, params) {
-    if (Array.isArray(data)) {
-      return Promise.all(data.map((current) => this.create(current, params)));
-    }
+  // async create(data, params) {
+  //   if (Array.isArray(data)) {
+  //     return Promise.all(data.map((current) => this.create(current, params)));
+  //   }
 
-    return data;
-  }
+  //   return data;
+  // }
 
-  async update(id, data, params) {
-    return data;
-  }
+  // async update(id, data, params) {
+  //   return data;
+  // }
 
-  async patch(id, data, params) {
-    return data;
-  }
+  // async patch(id, data, params) {
+  //   return data;
+  // }
 
-  async remove(id, params) {
-    return { id };
-  }
+  // async remove(id, params) {
+  //   return { id };
+  // }
 };
