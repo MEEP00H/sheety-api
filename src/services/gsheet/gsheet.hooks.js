@@ -1,3 +1,11 @@
+// const get_context = () => {
+//   return async (context) => {
+//     console.log(context.id);
+
+//     // return { msg: "test" };
+//   };
+// };
+
 module.exports = {
   before: {
     all: [],

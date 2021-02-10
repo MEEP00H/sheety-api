@@ -19,11 +19,17 @@ exports.Gsheet = class Gsheet {
       ["https://www.googleapis.com/auth/spreadsheets"]
     );
     const gsapi = google.sheets({ version: "v4", auth: client });
-    const data = await gsapi.spreadsheets.get({
-      spreadsheetId: id,
-    });
+    let data;
 
-    return { data };
+    try {
+      data = await gsapi.spreadsheets.get({
+        spreadsheetId: id,
+      });
+    } catch (error) {
+      data = { status: 500 };
+    }
+
+    return data;
   }
 
   async create(data, params) {
