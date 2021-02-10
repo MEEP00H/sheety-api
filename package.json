@@ -24,7 +24,7 @@
     "npm": ">= 3.0.0"
   },
   "scripts": {
-    "test": "npm run lint && npm run mocha",
+    "test": "npm run eslint && SET NODE_ENV= npm run jest",
     "lint": "eslint src/. test/. --config .eslintrc.json --fix",
     "dev": "nodemon src/",
     "start": "node src/",
@@ -48,6 +48,7 @@
     "compression": "^1.7.4",
     "cors": "^2.8.5",
     "feathers-mongoose": "^8.3.1",
+    "googleapis": "^39.2.0",
     "helmet": "^4.4.1",
     "mongodb-core": "^3.2.7",
     "mongoose": "^5.11.15",
