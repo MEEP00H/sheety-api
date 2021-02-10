@@ -1,4 +1,6 @@
 /* eslint-disable no-unused-vars */
+const { google } = require("googleapis");
+const keys = require("../../../keys.json");
 
 exports.Gsheet = class Gsheet {
   constructor(options) {
@@ -10,10 +12,18 @@ exports.Gsheet = class Gsheet {
   }
 
   async get(id, params) {
-    return {
-      id,
-      text: `A new message with ID: ${id}!`,
-    };
+    const client = new google.auth.JWT(
+      keys.client_email,
+      null,
+      keys.private_key,
+      ["https://www.googleapis.com/auth/spreadsheets"]
+    );
+    const gsapi = google.sheets({ version: "v4", auth: client });
+    const data = await gsapi.spreadsheets.get({
+      spreadsheetId: id,
+    });
+
+    return { data };
   }
 
   async create(data, params) {
