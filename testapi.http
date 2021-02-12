@@ -37,9 +37,22 @@ Content-Type: application/json
 
 {
     "name": "Blood",
-    //"spreadsheetId":  "1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M",
+    "spreadsheetId":  "1buCfwvedtERnGIWwLWByD8gNJHaRfldmNpGMfkXCtn4",
     //"owner":"60220499519fa205b8409518",
-    "strategy":"local",
-    "url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M/edit#gid=364734470"
-    
+    "strategy":"local"
+    //"url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M"
 }
+
+###
+GET http://localhost:3030/projects
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MTMxMTQ0MjAsImV4cCI6MTYxMzIwMDgyMCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjAyMjA0OTk1MTlmYTIwNWI4NDA5NTE4IiwianRpIjoiNGMwY2ViMDktZGJjMS00NDM2LThiNjktMWUzYjNiZWZkYmZlIn0.PZNYTbb7uqNiWcGoEXaCekLzc529OeCuBH5MGgQBXto
+###
+POST http://localhost:3030/authentication
+Content-Type: application/json
+
+
+ {
+     "email":"nattakarn.plian@gmail.com",
+     "password":"scret",
+     "strategy":"local"
+ }
