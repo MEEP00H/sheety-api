@@ -5,13 +5,12 @@
 module.exports = (options = {}) => {
   return async (context) => {
     // console.log(context);
-    const { _id } = context.params.users;
-    // get spreadsheetId which locate between "/d/" and "/edit"
+    const { _id: ownerId } = context.params.users;
     context.data = {
       ...context.data,
-      owner: { _id },
+      owner: ownerId,
     };
-    console.log(context);
+    // console.log(context);
     return context;
   };
 };

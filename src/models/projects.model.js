@@ -8,8 +8,8 @@ module.exports = function (app) {
   const { Schema } = mongooseClient;
   const schema = new Schema({
     name: { type: String, required: true },
-    spreadsheetId:  {type: String},
-    owner:{type: Schema.Types.ObjectId, ref: 'users'}
+    spreadsheetId: { type: String },
+    owner: { type: Schema.Types.ObjectId, ref: 'users' }
   }, {
     timestamps: true
   });
@@ -20,5 +20,5 @@ module.exports = function (app) {
     mongooseClient.deleteModel(modelName);
   }
   return mongooseClient.model(modelName, schema);
-  
+
 };

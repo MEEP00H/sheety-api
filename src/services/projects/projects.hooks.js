@@ -1,15 +1,13 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
-
 const getSpreadsheetId = require('../../hooks/get-spreadsheet-id');
-
 const getProjectOwner = require('../../hooks/get-project-owner');
 
 module.exports = {
   before: {
-    all: [ ],
+    all: [],
     find: [],
     get: [],
-    create: [ authenticate("jwt"),getProjectOwner(),getSpreadsheetId()],
+    create: [authenticate("jwt"), getProjectOwner(), getSpreadsheetId()],
     update: [],
     patch: [],
     remove: []
