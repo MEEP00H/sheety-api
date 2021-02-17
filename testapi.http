@@ -32,12 +32,13 @@ Content-Type: application/json
  }
 ###
 POST http://localhost:3030/projects 
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MTI4ODE4NTcsImV4cCI6MTYxMjk2ODI1NywiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjAyMjBkYWIyZDgwNjkwODYxMjI1Y2NjIiwianRpIjoiOGUzOGMwZTUtMmViMi00MTZjLTliNzktNjczZGE0NmRhYzliIn0.Vgh0btWuT7hmr4AkAD6XpevtqF33on1EHyX3hHJ4GJg
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6ImFjY2VzcyJ9.eyJpYXQiOjE2MTMxMTQ0MjAsImV4cCI6MTYxMzIwMDgyMCwiYXVkIjoiaHR0cHM6Ly95b3VyZG9tYWluLmNvbSIsImlzcyI6ImZlYXRoZXJzIiwic3ViIjoiNjAyMjA0OTk1MTlmYTIwNWI4NDA5NTE4IiwianRpIjoiNGMwY2ViMDktZGJjMS00NDM2LThiNjktMWUzYjNiZWZkYmZlIn0.PZNYTbb7uqNiWcGoEXaCekLzc529OeCuBH5MGgQBXto
 Content-Type: application/json
 
 {
     "name": "Blood",
     "spreadsheetId":  "1buCfwvedtERnGIWwLWByD8gNJHaRfldmNpGMfkXCtn4",
+    "sheets":[], 
     //"owner":"60220499519fa205b8409518",
     "strategy":"local"
     //"url" : "https://docs.google.com/spreadsheets/d/1q1xMYx3OMU7XJvPb-e1SnSAABYRu8fSCFP-bXr0vJ8M"
@@ -56,3 +57,6 @@ Content-Type: application/json
      "password":"scret",
      "strategy":"local"
  }
+
+###
+GET http://localhost:3030/gsheet/1buCfwvedtERnGIWwLWByD8gNJHaRfldmNpGMfkXCtn4

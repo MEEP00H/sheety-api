@@ -9,11 +9,11 @@ module.exports = function (app) {
   const schema = new Schema({
     name: { type: String, required: true },
     spreadsheetId:  {type: String},
-    owner:{type: Schema.Types.ObjectId, ref: 'users'}
+    sheets: {type: Array}
+    // ownerId:{type: Schema.Types.ObjectId, ref: 'users'}
   }, {
     timestamps: true
   });
-
   // This is necessary to avoid model compilation errors in watch mode
   // see https://mongoosejs.com/docs/api/connection.html#connection_Connection-deleteModel
   if (mongooseClient.modelNames().includes(modelName)) {

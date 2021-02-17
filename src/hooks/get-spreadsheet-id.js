@@ -1,30 +1,21 @@
-// Use this hook to manipulate incoming or outgoing data.
-// For more information on hooks see: http://docs.feathersjs.com/api/hooks.html
-
-// eslint-disable-next-line no-unused-vars
+const { BadRequest } = require("@feathersjs/errors");
+const DataGoogleSheet = require("../util/data-google-sheet");
+const _ = require("lodash");
 module.exports = (options = {}) => {
   return async context => {
-    // console.log(context)
-    const { url } = context.data;
-    //get spreadsheetId which locate between "/d/" and "/edit"
-    var hasEdit = url.includes("/edit", 12);
-    if (hasEdit) {
-      var spreadsheetId = url.substring(
-        url.lastIndexOf("/d/") + 3,
-        url.lastIndexOf("/edit")
-      );
+    const { spreadsheetId } = context.data;
+    const gsheet = await DataGoogleSheet(spreadsheetId);
+    if (!_.has(context.result, "message")) {
+      context.result = {
+        spreadsheetId: spreadsheetId,
+        title: title,
+        sheets: arr_sheets,
+      };
     }
-    else {
-      var spreadsheetId = url.substring(
-        url.lastIndexOf("/d/") + 3);
-    }
-    console.log(spreadsheetId);
-    context.data = {
-      ...context.data,
-      "spreadsheetId": spreadsheetId
-    }
-    // console.log(context)
-
-    return context;
+    console.log(message);
   };
 };
+
+
+
+

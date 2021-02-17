@@ -35,9 +35,8 @@
         "scope": [
           "email",
           "profile",
-          "openid",
-          "https://www.googleapis.com/auth/spreadsheets"
-        ],
+          "openid"
+          ],
         "nonce": true
       }
     }
