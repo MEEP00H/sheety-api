@@ -15,3 +15,4 @@ module.exports = function (app) {
 
   service.hooks(hooks);
 };
+
