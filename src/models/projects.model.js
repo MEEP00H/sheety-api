@@ -9,7 +9,8 @@ module.exports = function (app) {
   const schema = new Schema({
     name: { type: String, required: true },
     spreadsheetId:  {type: String},
-    sheets: {type: Array}
+    sheets: {type: Array},
+    url:{type: String}
     // ownerId:{type: Schema.Types.ObjectId, ref: 'users'}
   }, {
     timestamps: true
