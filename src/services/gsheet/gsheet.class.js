@@ -1,38 +1,39 @@
-/* eslint-disable no-unused-vars */
+
+
+const GetDataGoogleSheet = require("../../util/data-google-sheet");
+const { NotFound } = require("@feathersjs/errors");
 
 exports.Gsheet = class Gsheet {
   constructor(options) {
     this.options = options || {};
   }
 
-  async find(params) {
-    return [];
-  }
+  // async find(params) {
+  //   return [];
+  // }
 
   async get(id, params) {
-    return {
-      id,
-      text: `A new message with ID: ${id}!`,
-    };
+    return await GetDataGoogleSheet(id);
   }
 
-  async create(data, params) {
-    if (Array.isArray(data)) {
-      return Promise.all(data.map((current) => this.create(current, params)));
-    }
+  // async create(data, params) {
+  //   if (Array.isArray(data)) {
+  //     return Promise.all(data.map((current) => this.create(current, params)));
+  //   }
 
-    return data;
-  }
+  //   return data;
+  // }
 
-  async update(id, data, params) {
-    return data;
-  }
+  // async update(id, data, params) {
+  //   return data;
+  // }
 
-  async patch(id, data, params) {
-    return data;
-  }
+  // async patch(id, data, params) {
+  //   return data;
+  // }
 
-  async remove(id, params) {
-    return { id };
-  }
+  // async remove(id, params) {
+  //   return { id };
+  // }
 };
+
