@@ -1,16 +1,23 @@
 
-###
-GET http://localhost:3030/users
+@host = http://localhost:3030
+@email = rapee@boonmeelab.com
 
 ###
-POST http://localhost:3030/users
+@name = "Get users"
+GET {{host}}/users
+
+###
+
+@name = "Create user"
+POST {{host}}/users
 Content-Type: application/json
 
- {
-     "email":"nattakarn.plian@gmail.com",
-     "password":"scret",
-     "strategy":"local"
- }
+{
+  "email": "{{email}}",
+  "password": "scret",
+  "strategy": "local"
+}
+
 ###
 POST http://localhost:3030/users
  Content-Type: application/json
@@ -73,5 +80,4 @@ Content-Type: application/json
     "url" : "https://docs.google.com/spreadsheets/d/1buCfwvedtERnGIWwLWByD8gNJHaRfldmNpGMfkXCtn4",
     //"owner":"60220499519fa205b8409518",
     "strategy":"local"
-    
 }
